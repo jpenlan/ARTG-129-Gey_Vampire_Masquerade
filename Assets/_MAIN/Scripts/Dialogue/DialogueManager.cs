@@ -13,8 +13,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
 
+
+    [Header("Load Globals JSON")]
+    [SerializeField] private TextAsset loadGlobalsJSON;
+
     [Header("Choices UI")]
-    [SerializeField] private InkFile globalsInkFile;
     [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
 
@@ -31,7 +34,7 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("Found more than one Dialogue Manager in the scene");
         }
         instance = this;
-        dialogueVariables= new DialogueVariables(globalsInkFile.filePath);
+        dialogueVariables= new DialogueVariables(loadGlobalsJSON);
     }
 
     public static DialogueManager GetInstance()
@@ -71,13 +74,13 @@ public class DialogueManager : MonoBehaviour
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
-        dilogueVariables.StartListening(currentStory);
+        dialogueVariables.StartListening(currentStory);
         ContinueStory();
     }
 
     private void ExitDialogueMode()
     {
-        DialogueVariables.StopListening(currentStory);
+        dialogueVariables.StopListening(currentStory);
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
