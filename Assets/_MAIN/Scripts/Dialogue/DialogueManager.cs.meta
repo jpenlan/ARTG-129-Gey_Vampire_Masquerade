@@ -3,7 +3,10 @@ guid: 4c1c3d2cd7df7b840ac41b1aa13ed824
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - dialoguePanel: {instanceID: 0}
+  - dialogueText: {instanceID: 0}
+  - loadGlobalsJSON: {fileID: 4900000, guid: fa65824d90814ee48b7ddc3e754c6a84, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
