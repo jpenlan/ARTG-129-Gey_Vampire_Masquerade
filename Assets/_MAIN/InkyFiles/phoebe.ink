@@ -1,5 +1,3 @@
-
-
 -> main
 
 ===main===
@@ -52,10 +50,5 @@ Oh no. #speaker: Sol
     “Okayyyyyy bye!” #speaker: Phoebe #portrait: pheobe_neutral
     She giggles and goes back to watching the incubus dance. #speaker: Sol
 
-    
-
-
-        
-    
 
     -> END
